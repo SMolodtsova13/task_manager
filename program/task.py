@@ -51,10 +51,10 @@ class Task:
         task = cls(
             id=data['id'],
             title=data['title'],
-            description=data.get('description', ""),
-            category=data.get('category', ""),
+            description=data.get('description', ''),
+            category=data.get('category', ''),
             due_date=Task.convert_data_from_str(data.get('due_date', None)),
-            priority=data.get('priority', ""),
+            priority=data.get('priority', ''),
             status=data.get('status', False),
         )
         return task

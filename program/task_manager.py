@@ -34,7 +34,9 @@ class TaskManager:
 
     def update_task(self, updated_task: Task) -> Task:
         """Обновляет существующую задачу."""
-        index = next((i for i, t in enumerate(self.tasks) if t.id == updated_task.id), None)
+        index = next((
+            i for i, t in enumerate(self.tasks) if t.id == updated_task.id
+        ), None)
         if index is not None:
             self.tasks[index] = updated_task
         return updated_task
@@ -77,5 +79,4 @@ class TaskManager:
                 tasks = [Task.from_dict(d) for d in data]
                 return cls(tasks)
         except FileNotFoundError:
-            print(f'Файл {filename} не найден.')
             return cls()
