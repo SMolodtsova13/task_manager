@@ -38,13 +38,13 @@ def test_update_task(task_manager, sample_task):
     added_task = task_manager.add_task(sample_task)
     updated_task = Task(
         id=added_task.id,
-        title='Updated Title',
-        description='New Description',
-        category='Personal',
+        title='Новый заголовок',
+        description='Новое Описание',
+        category='Личное',
         due_date=Task.convert_data_from_str('05-05-2023'),
-        priority='Low')
+        priority='Низкий')
     task_manager.update_task(updated_task)
-    assert task_manager.find_by_id(added_task.id).title == 'Updated Title'
+    assert task_manager.find_by_id(added_task.id).title == 'Новый заголовок'
 
 
 def test_complete_task(task_manager, sample_task):
