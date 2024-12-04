@@ -10,7 +10,7 @@ def task_manager():
 
 @pytest.fixture
 def sample_task():
-    return Task("Test Task", "This is a test task.", "Work", "2023-12-31", "High")
+    return Task('Test Task', 'This is a test task.', 'Work', '2023-12-31', 'High')
 
 def test_add_task(task_manager, sample_task):
     added_task = task_manager.add_task(sample_task)
@@ -24,10 +24,10 @@ def test_find_by_id(task_manager, sample_task):
 
 def test_update_task(task_manager, sample_task):
     added_task = task_manager.add_task(sample_task)
-    updated_task = Task("Updated Title", "New Description", "Personal", "2024-01-15", "Low")
+    updated_task = Task('Updated Title', 'New Description', 'Personal', '2024-01-15', 'Low')
     updated_task.id = added_task.id
     task_manager.update_task(updated_task)
-    assert task_manager.find_by_id(added_task.id).title == "Updated Title"
+    assert task_manager.find_by_id(added_task.id).title == 'Updated Title'
 
 def test_complete_task(task_manager, sample_task):
     added_task = task_manager.add_task(sample_task)
@@ -36,9 +36,9 @@ def test_complete_task(task_manager, sample_task):
 
 def test_search_tasks(task_manager, sample_task):
     added_task = task_manager.add_task(sample_task)
-    result = task_manager.search_tasks("test")
+    result = task_manager.search_tasks('test')
     assert len(result) == 1
-    assert result[0].title == "Test Task"
+    assert result[0].title == 'Test Task'
 
 def test_delete_task(task_manager, sample_task):
     added_task = task_manager.add_task(sample_task)

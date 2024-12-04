@@ -1,4 +1,4 @@
-from .task_manager import TaskManager
+from task_manager import TaskManager
 
 class Storage:
     """Загрузка и сохранение задач в файл."""
