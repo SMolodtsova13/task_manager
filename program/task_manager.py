@@ -1,5 +1,6 @@
-from .task import Task
 import uuid
+
+from program.task import Task
 
 
 class TaskManager:
