@@ -30,7 +30,7 @@ def show_tasks(tasks):
         show_task(task)
 
 
-def run_cli():
+def run_program_ui():
     manager = TaskManager(Storage.load_tasks())
 
     while True:
@@ -79,19 +79,19 @@ def run_cli():
 
             new_title = input(
                 'Новое название (оставьте пустым для сохранения текущего): '
-                ) or task.title
+            ) or task.title
             new_description = input(
                 'Новое описание (оставьте пустым для сохранения текущего): '
-                ) or task.description
+            ) or task.description
             new_category = input(
                 'Новая категория (оставьте пустым для сохранения текущей): '
-                ) or task.category
+            ) or task.category
             new_due_date = input(
                 f'Новый срок выполнения ({DATE_PATTERN_RU}) (оставьте пустым для сохранения текущего): '
-                ) or None
+            ) or None
             new_priority = input(
                 'Новый приоритет (оставьте пустым для сохранения текущего): '
-                ) or task.priority
+            ) or task.priority
 
             task.title = new_title
             task.description = new_description
@@ -142,4 +142,4 @@ def run_cli():
 
 
 if __name__ == '__main__':
-    run_cli()
+    run_program_ui()
